@@ -89,6 +89,11 @@ class QuizGame:
             f"🏆 결과: {len(self.quizzes)}문제 중 "
             f"{score}문제 정답! ({percentage}점)"
         )
+
+        if self.best_score is None or percentage > self.best_score:
+            self.best_score = percentage
+            print("🎉 새로운 최고 점수입니다!")
+
         print("=" * 40)
 
     def add_quiz(self):
@@ -154,6 +159,15 @@ class QuizGame:
             print(f"[{index}] {quiz.question}")
 
         print("-" * 40)
+    def show_score(self):
+        print()
+        print("🏆 최고 점수 확인")
+
+        if self.best_score is None:
+            print("아직 퀴즈를 플레이하지 않았습니다.")
+            return
+
+        print(f"현재 최고 점수: {self.best_score}점")
     def run(self):
         while True:
             self.show_menu()
@@ -169,7 +183,7 @@ class QuizGame:
                 self.show_quiz_list()
 
             elif choice == 4:
-                print("점수 확인 기능은 다음 단계에서 구현합니다.")
+                self.show_score()
 
             elif choice == 5:
                 print("퀴즈 게임을 종료합니다.")
