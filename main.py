@@ -1,23 +1,14 @@
-from quiz import Quiz
+from quiz_data import get_default_quizzes
 
 
 def main():
-    quiz = Quiz(
-        "CNC의 의미는 무엇인가?",
-        [
-            "Computer Numerical Control",
-            "Central Network Controller",
-            "Computer Network Code",
-            "Control Number Computer"
-        ],
-        1
-    )
+    quizzes = get_default_quizzes()
 
-    quiz.display()
+    print("=== 기본 퀴즈 목록 ===")
+    print(f"총 퀴즈 수: {len(quizzes)}개")
 
-    print()
-    print("정답 확인 테스트")
-    print(quiz.check_answer(1))
+    for index, quiz in enumerate(quizzes, start=1):
+        print(f"{index}. {quiz.question}")
 
 
 if __name__ == "__main__":
