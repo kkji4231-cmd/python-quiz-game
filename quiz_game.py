@@ -1,3 +1,4 @@
+from quiz import Quiz
 from quiz_data import get_default_quizzes
 
 
@@ -89,6 +90,55 @@ class QuizGame:
             f"{score}문제 정답! ({percentage}점)"
         )
         print("=" * 40)
+
+    def add_quiz(self):
+        print()
+        print("📌 새로운 퀴즈를 추가합니다.")
+
+        while True:
+            question = input("문제를 입력하세요: ").strip()
+
+            if question:
+                break
+
+            print("⚠️ 문제를 입력하세요.")
+
+        choices = []
+
+        for index in range(1, 5):
+            while True:
+                choice = input(f"선택지 {index}: ").strip()
+
+                if choice:
+                    choices.append(choice)
+                    break
+
+                print("⚠️ 선택지를 입력하세요.")
+
+        while True:
+            try:
+                answer_input = input("정답 번호 (1-4): ").strip()
+
+                if not answer_input:
+                    print("⚠️ 정답 번호를 입력하세요.")
+                    continue
+
+                answer = int(answer_input)
+
+                if 1 <= answer <= 4:
+                    break
+
+                print("⚠️ 1~4 사이의 숫자를 입력하세요.")
+
+            except ValueError:
+                print("⚠️ 숫자만 입력하세요.")
+
+        new_quiz = Quiz(question, choices, answer)
+        self.quizzes.append(new_quiz)
+
+        print()
+        print("✅ 퀴즈가 추가되었습니다!")
+        print(f"현재 등록된 퀴즈: {len(self.quizzes)}개")
     def run(self):
         while True:
             self.show_menu()
@@ -98,7 +148,7 @@ class QuizGame:
                 self.play_quiz()
 
             elif choice == 2:
-                print("퀴즈 추가 기능은 다음 단계에서 구현합니다.")
+                self.add_quiz()
 
             elif choice == 3:
                 print("퀴즈 목록 기능은 다음 단계에서 구현합니다.")
