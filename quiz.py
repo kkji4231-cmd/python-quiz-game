@@ -11,5 +11,19 @@ class Quiz:
         for index, choice in enumerate(self.choices, start=1):
             print(f"{index}. {choice}")
 
-    def check_answer(self, user_answer):
+    def check_answer(self, user_answer):  
         return user_answer == self.answer
+    def to_dict(self):
+        return {
+            "question": self.question,
+            "choices": self.choices,
+            "answer": self.answer
+        }
+
+    @classmethod
+    def from_dict(cls, data):
+        return cls(
+            data["question"],
+            data["choices"],
+            data["answer"]
+        )
