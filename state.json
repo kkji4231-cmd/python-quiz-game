@@ -59,6 +59,16 @@
                 "Auto Turning Center"
             ],
             "answer": 1
+        },
+        {
+            "question": "APC의 의미는?",
+            "choices": [
+                "Automatic Pallet Changer",
+                "Automatic Position Control",
+                "Axis Program Controller",
+                "Automatic Power Control"
+            ],
+            "answer": 1
         }
     ],
     "best_score": 100

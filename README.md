@@ -725,6 +725,34 @@ state.json 불러오기
 ```
 
 이 프로젝트를 통해 Python 기초 문법에서부터 객체지향 구조, JSON 데이터 영속성, 예외 처리, Git 버전 관리 및 Feature Branch 병합까지 직접 구현하고 검증했습니다.
-## 18. Clone / Pull �ǽ�
+## 18. Clone / Pull �ǽ�
 
-���� ���͸��� ����Ҹ� Clone�� �� ����, Commit, Push�ϰ� ���� �۾� ���͸����� Pull�Ͽ� ��������� �ݿ��߽��ϴ�.
+���� ���͸��� ����Ҹ� Clone�� �� ����, Commit, Push�ϰ� ���� �۾� ���͸����� Pull�Ͽ� ��������� �ݿ��߽��ϴ�.
+
+---
+
+## 18. 실행 결과 스크린샷
+
+### 개발 환경 및 프로그램 실행
+
+![개발 환경](docs/screenshots/environment.png)
+
+### 퀴즈 플레이
+
+![퀴즈 플레이](docs/screenshots/play.png)
+
+### 퀴즈 추가
+
+![퀴즈 추가](docs/screenshots/add_quiz.png)
+
+### 퀴즈 목록
+
+![퀴즈 목록](docs/screenshots/quiz_list.png)
+
+### 최고 점수 확인
+
+![최고 점수](docs/screenshots/score.png)
+
+### Git Commit 및 Branch 기록
+
+![Git Log](docs/screenshots/git_log.png)
